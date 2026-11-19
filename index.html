@@ -53,15 +53,14 @@
     </section>
     <section class="builder-section" id="tao-ho-so" aria-labelledby="builder-title">
       <div class="container">
-        <div class="section-heading"><span class="section-label">MANG TÊN BẠN</span><h2 id="builder-title">Một ID. Một hồ sơ riêng.</h2><p>Chọn loại ID, điền thông tin và để UpLocket chuẩn bị phần còn lại.</p></div>
+        <div class="section-heading"><span class="section-label">MANG TÊN BẠN</span><h2 id="builder-title">Một username. Một hồ sơ riêng.</h2><p>Nhập username Locket và để UpLocket chuẩn bị hồ sơ mang tên bạn.</p></div>
         <div class="builder-grid">
           <div class="builder-card">
             <div class="card-heading"><span class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v4m0 10v4M3 12h4m10 0h4m-7-7 2 2m-12 8 2 2m8 0-2 2M6 6l2 2"/><circle cx="12" cy="12" r="4"/></svg></span><div><h3>Tạo cấu hình cá nhân</h3><p>Dành cho iPhone và iPad</p></div><span class="free-badge">0đ</span></div>
             <form id="profile-form" novalidate>
-              <fieldset class="id-selector"><legend>Loại ID Locket</legend><label><input type="radio" name="account-type" value="username" checked><span>@ Username</span></label><label><input type="radio" name="account-type" value="uid"><span>UID tài khoản</span></label></fieldset>
               <label class="field-label" for="account-id" id="account-label">Username Locket của bạn</label>
               <div class="input-wrap"><span id="input-prefix" aria-hidden="true">@</span><input id="account-id" name="account" type="text" placeholder="ten_cua_ban" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="65" aria-describedby="account-hint form-error" required></div>
-              <p class="field-hint" id="account-hint">Nhập username hiển thị trong hồ sơ Locket. Không nhập mật khẩu.</p>
+              <p class="field-hint" id="account-hint">Nhập username hiển thị trong hồ sơ Locket, có hoặc không có @. Không nhập mật khẩu.</p>
               <p id="form-error" class="form-error" role="alert" hidden></p>
               <div class="profile-summary"><div><span>Tên hồ sơ</span><strong id="preview-name">UpLocket · @bạn</strong></div><div><span>Loại chữ ký</span><strong>Chứng chỉ tự ký</strong></div><div><span>Cấu hình DNS</span><strong>Theo hồ sơ mẫu hiện có</strong></div></div>
               <label class="consent"><input id="profile-consent" type="checkbox" required><span>Tôi hiểu hồ sơ chứa cấu hình DNS và chứng chỉ CA của bên thứ ba. Tôi sẽ xem nội dung trước khi cài đặt.</span></label>
@@ -87,7 +86,7 @@
       <p class="guide-footnote">Chứng chỉ tự ký có thể hiển thị “Chưa xác minh”. <a href="https://support.apple.com/vi-vn/102400" target="_blank" rel="noopener noreferrer">Đọc hướng dẫn cài hồ sơ của Apple</a>.</p>
     </section>
     <section class="faq-section container" id="cau-hoi" aria-labelledby="faq-title"><div><span class="section-label">CÓ THỂ BẠN ĐANG THẮC MẮC</span><h2 id="faq-title">Rõ một chút,<br>an tâm hơn.</h2><p>Thông tin cần biết trước khi cài hồ sơ lên thiết bị.</p></div><div class="faq-list">
-      <details><summary>Nhập username có xác minh được tài khoản Locket không?</summary><p>Không. Username hoặc UID chỉ dùng để tạo tên, mã định danh và chứng chỉ ký cho hồ sơ. Web không đăng nhập Locket, không tra cứu tài khoản và không xác nhận quyền sở hữu ID.</p></details>
+      <details><summary>Nhập username có xác minh được tài khoản Locket không?</summary><p>Không. Username chỉ dùng để tạo tên, mã định danh và chứng chỉ ký cho hồ sơ. Web không đăng nhập Locket, không tra cứu tài khoản và không xác nhận quyền sở hữu username.</p></details>
       <details><summary>Chứng chỉ nào được thay đổi theo ID?</summary><p>Chứng chỉ ký bên ngoài hồ sơ được tạo mới theo ID của bạn. Chứng chỉ CA bên trong và địa chỉ DNS giữ nguyên theo bản mẫu vì chúng phải khớp với hệ thống DNS đang sử dụng.</p></details>
       <details><summary>Hồ sơ này có tự mở khóa Locket Gold không?</summary><p>Không. Việc tạo chữ ký hoặc đổi tên hồ sơ không cấp quyền Gold. Muốn cấp cấu hình riêng cho từng tài khoản cần dịch vụ DNS và API cấp quyền hợp lệ; phiên bản web hiện tại chưa có kết nối này.</p></details>
       <details><summary>ID và khóa ký được lưu ở đâu?</summary><p>ID và khóa riêng chỉ tồn tại trong bộ nhớ của tab khi tạo hồ sơ. Khóa được bỏ đi sau khi ký; website không gửi ID hoặc khóa lên máy chủ và không dùng localStorage để lưu chúng.</p></details>
