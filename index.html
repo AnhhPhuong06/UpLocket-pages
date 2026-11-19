@@ -3,83 +3,99 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#faf8f2">
-  <meta name="description" content="Tải cấu hình UpLocket và xem hướng dẫn cài đặt trên iPhone.">
-  <title>UpLocket — Tải cấu hình</title>
-  <style>
-    :root { color-scheme: light; --bg:#faf8f2; --ink:#20231d; --muted:#60665a; --gold:#f2cf5b; --line:#dedfd3; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
-    a { color:inherit; text-underline-offset:4px; }
-    a:focus-visible { outline:3px solid #926000; outline-offset:5px; }
-    .wrap { width:min(1040px,calc(100% - 48px)); margin:auto; }
-    header { display:flex; justify-content:space-between; align-items:center; padding:28px 0; border-bottom:1px solid var(--line); gap:16px; }
-    .brand { display:flex; align-items:center; gap:10px; font-weight:750; font-size:20px; letter-spacing:-.6px; text-decoration:none; }
-    .mark { display:grid; place-items:center; width:38px; height:38px; border-radius:12px; background:var(--gold); font-size:20px; }
-    .nav { min-height:44px; display:flex; align-items:center; font-size:14px; color:var(--muted); }
-    main { padding:76px 0 50px; }
-    .hero { display:grid; grid-template-columns:1.2fr 1fr; align-items:center; gap:64px; }
-    .eyebrow { display:flex; align-items:center; gap:8px; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; }
-    .dot { width:7px; height:7px; border-radius:50%; background:#657349; }
-    h1 { font-size:clamp(40px,5.5vw,65px); line-height:1.1; letter-spacing:-2.5px; font-weight:750; margin:22px 0; text-wrap:balance; }
-    .intro { max-width:420px; color:var(--muted); font-size:18px; }
-    .card { background:#fff; border:1px solid var(--line); border-radius:24px; padding:32px; box-shadow:0 14px 35px #24291c06; }
-    .file-icon { width:60px; height:60px; border-radius:18px; display:grid; place-items:center; background:#fff5cd; margin-bottom:26px; }
-    svg { display:block; }
-    h2 { font-size:24px; letter-spacing:-.6px; line-height:1.3; margin:0 0 8px; }
-    .file-meta { color:var(--muted); font-size:14px; margin:0 0 26px; }
-    .download { display:flex; justify-content:center; align-items:center; gap:12px; background:var(--gold); min-height:56px; padding:14px 20px; border-radius:12px; font-weight:700; text-decoration:none; transition:background .2s,transform .2s; }
-    .download:hover { background:#eac247; transform:translateY(-2px); }
-    .hint { color:var(--muted); text-align:center; font-size:13px; margin:14px 0 0; }
-    .notice { margin:22px 0 0; padding-top:20px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); }
-    .guide { margin-top:88px; padding-top:36px; border-top:1px solid var(--line); scroll-margin-top:24px; }
-    .guide-title { display:flex; justify-content:space-between; align-items:baseline; gap:16px; }
-    .guide-title p { margin:0; font-size:13px; color:var(--muted); }
-    ol { list-style:none; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin:30px 0 0; counter-reset:steps; }
-    li { counter-increment:steps; }
-    li::before { content:"0" counter(steps); display:block; color:#7c6724; font-size:12px; font-weight:750; letter-spacing:1px; margin-bottom:12px; }
-    h3 { font-size:16px; margin:0 0 7px; }
-    li p { color:var(--muted); font-size:14px; margin:0; }
-    .support { font-size:13px; color:var(--muted); margin-top:28px; }
-    footer { display:flex; justify-content:space-between; gap:20px; padding:25px 0 32px; border-top:1px solid var(--line); font-size:12px; color:var(--muted); }
-    @media(max-width:720px) { main{padding-top:42px}.hero{grid-template-columns:1fr;gap:28px}h1{letter-spacing:-1.8px;max-width:480px}.intro{font-size:16px}.card{padding:26px}.guide{margin-top:48px}.guide-title{display:block}.guide-title p{margin-top:8px}ol{grid-template-columns:1fr;gap:26px}li{position:relative;padding-left:40px}li::before{position:absolute;left:0;top:2px}.wrap{width:calc(100% - 40px)}header{padding:18px 0}footer{flex-wrap:wrap} }
-    @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.download{transition:none}.download:hover{transform:none} }
-  </style>
+  <meta name="theme-color" content="#fffdf7">
+  <meta name="description" content="Tạo hồ sơ DNS UpLocket theo ID Locket, ký ngay trên thiết bị và tải về cho iPhone.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>UpLocket — Hồ sơ riêng cho Locket của bạn</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/profile-core.js" defer></script>
+  <script src="assets/app.js" defer></script>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <a class="brand" href="./" aria-label="UpLocket — Trang chủ"><span class="mark" aria-hidden="true">u</span>UpLocket</a>
-      <a class="nav" href="#huong-dan">Hướng dẫn cài đặt ↗</a>
-    </header>
-    <main>
-      <section class="hero" aria-labelledby="title">
-        <div>
-          <div class="eyebrow"><span class="dot" aria-hidden="true"></span>Cấu hình dành cho iPhone</div>
-          <h1 id="title">UpLocket,<br>sẵn sàng trên iPhone.</h1>
-          <p class="intro">Tải cấu hình DNS-over-HTTPS UpLocket và làm theo ba bước bên dưới để cài đặt.</p>
+  <a class="skip-link" href="#main">Đi đến nội dung</a>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="./" aria-label="UpLocket — trang chủ"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 7v7a6 6 0 0 0 12 0V7M9 7h6"/></svg></span><span>up<span class="brand-light">locket</span><small>YOUR LITTLE CONNECTION</small></span></a>
+      <nav aria-label="Điều hướng chính"><a href="#tao-ho-so">Tạo hồ sơ</a><a href="#cai-dat">Cách cài đặt</a><a href="#cau-hoi">Giải đáp</a></nav>
+      <a class="button button-small button-dark nav-cta" href="#tao-ho-so">Bắt đầu miễn phí</a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/></svg>Một chút riêng. Một chút bạn.</span>
+        <h1 id="hero-title">Locket của bạn.<br>Hồ sơ <span class="highlight">của riêng bạn.</span></h1>
+        <p class="hero-description">Nhập ID Locket, nhận hồ sơ DNS mang tên bạn. Tạo chữ ký mới ngay trên thiết bị và cài đặt trực tiếp trên iPhone.</p>
+        <div class="hero-actions"><a class="button button-gold" href="#tao-ho-so">Tạo hồ sơ của tôi<svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4Z"/></svg></a><a class="text-link" href="#cai-dat">Xem cách cài đặt</a></div>
+        <div class="hero-facts"><span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Không cần mật khẩu</span><span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Tạo ngay trên máy</span></div>
+      </div>
+      <div class="hero-art" role="img" aria-label="Minh họa các widget và hồ sơ UpLocket được cá nhân hóa">
+        <span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span>
+        <div class="floating-note note-top"><span class="note-symbol">✦</span>made for you</div>
+        <div class="phone">
+          <div class="phone-island"></div><div class="phone-time">09:41</div><div class="phone-date">Thứ Năm, một ngày thật đẹp</div>
+          <div class="widget-grid">
+            <div class="widget widget-landscape"><svg viewBox="0 0 180 180" aria-hidden="true"><defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#c7dcf2"/><stop offset="1" stop-color="#ffe5b4"/></linearGradient></defs><rect width="180" height="180" fill="url(#sky)"/><circle cx="133" cy="48" r="23" fill="#fff4cf"/><path d="M0 135 58 72l61 81 31-41 30 45v23H0" fill="#9cae86"/><path d="m0 158 63-43 49 51 37-26 31 25v15H0" fill="#536c4f"/></svg><span>a little moment</span></div>
+            <div class="widget widget-heart"><svg aria-hidden="true" viewBox="0 0 80 80"><path d="M40 66 12 39C-5 19 23 3 40 23 57 3 85 19 68 39Z"/></svg><span>close to you</span></div>
+            <div class="widget widget-quote"><span class="tiny-star">✳</span><strong>những điều<br>nhỏ xíu,<br>rất là mình.</strong></div>
+            <div class="widget widget-flower"><svg viewBox="0 0 120 120" aria-hidden="true"><g fill="#fff4d0"><ellipse cx="60" cy="39" rx="13" ry="27"/><ellipse cx="60" cy="81" rx="13" ry="27"/><ellipse cx="39" cy="60" rx="27" ry="13"/><ellipse cx="81" cy="60" rx="27" ry="13"/><ellipse cx="45" cy="45" rx="25" ry="12" transform="rotate(45 45 45)"/><ellipse cx="75" cy="75" rx="25" ry="12" transform="rotate(45 75 75)"/><ellipse cx="45" cy="75" rx="25" ry="12" transform="rotate(-45 45 75)"/><ellipse cx="75" cy="45" rx="25" ry="12" transform="rotate(-45 75 45)"/></g><circle cx="60" cy="60" r="15" fill="#bd7749"/></svg><span>good things grow</span></div>
+          </div><div class="phone-home"></div>
         </div>
-        <div class="card">
-          <div class="file-icon" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 12v6m-3-3 3 3 3-3"/></svg></div>
-          <h2>Hồ sơ UpLocket</h2>
-          <p class="file-meta">UpLocket.mobileconfig · 7,5 KB</p>
-          <a class="download" href="./UpLocket.mobileconfig">Tải cấu hình <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/></svg></a>
-          <p class="hint">Mở trang bằng Safari trên iPhone.</p>
-          <p class="notice">Hồ sơ dùng chứng chỉ tự ký. iPhone có thể hiển thị “Chưa xác minh”. Hãy xem nội dung hồ sơ trước khi cài đặt.</p>
+        <div class="floating-note note-bottom"><span class="mini-profile"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7Zm0 0v5h5M9 13h6m-6 4h4"/></svg></span><span><strong>UpLocket · @you</strong><small>Hồ sơ mang dấu ấn của bạn</small></span><span class="check-circle">✓</span></div>
+      </div>
+    </section>
+    <section class="benefits container" aria-label="Tính năng tạo hồ sơ">
+      <div><span class="benefit-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6ZM8 12l3 3 5-6"/></svg></span><span><strong>Không hỏi mật khẩu</strong><small>Chỉ dùng ID bạn nhập</small></span></div>
+      <div><span class="benefit-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4M10 6h4"/></svg></span><span><strong>Xử lý trên thiết bị</strong><small>ID không gửi đến máy chủ</small></span></div>
+      <div><span class="benefit-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m14 3-9 11h6l-1 7 9-11h-6Z"/></svg></span><span><strong>Tạo chữ ký mới</strong><small>Mỗi lần tạo, một hồ sơ riêng</small></span></div>
+      <div><span class="benefit-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16v13H4Zm0 0 8-4 8 4M8 12h8m-8 4h5"/></svg></span><span><strong>Hoàn toàn miễn phí</strong><small>Không đăng ký, không thanh toán</small></span></div>
+    </section>
+    <section class="builder-section" id="tao-ho-so" aria-labelledby="builder-title">
+      <div class="container">
+        <div class="section-heading"><span class="section-label">MANG TÊN BẠN</span><h2 id="builder-title">Một ID. Một hồ sơ riêng.</h2><p>Chọn loại ID, điền thông tin và để UpLocket chuẩn bị phần còn lại.</p></div>
+        <div class="builder-grid">
+          <div class="builder-card">
+            <div class="card-heading"><span class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v4m0 10v4M3 12h4m10 0h4m-7-7 2 2m-12 8 2 2m8 0-2 2M6 6l2 2"/><circle cx="12" cy="12" r="4"/></svg></span><div><h3>Tạo cấu hình cá nhân</h3><p>Dành cho iPhone và iPad</p></div><span class="free-badge">0đ</span></div>
+            <form id="profile-form" novalidate>
+              <fieldset class="id-selector"><legend>Loại ID Locket</legend><label><input type="radio" name="account-type" value="username" checked><span>@ Username</span></label><label><input type="radio" name="account-type" value="uid"><span>UID tài khoản</span></label></fieldset>
+              <label class="field-label" for="account-id" id="account-label">Username Locket của bạn</label>
+              <div class="input-wrap"><span id="input-prefix" aria-hidden="true">@</span><input id="account-id" name="account" type="text" placeholder="ten_cua_ban" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="65" aria-describedby="account-hint form-error" required></div>
+              <p class="field-hint" id="account-hint">Nhập username hiển thị trong hồ sơ Locket. Không nhập mật khẩu.</p>
+              <p id="form-error" class="form-error" role="alert" hidden></p>
+              <div class="profile-summary"><div><span>Tên hồ sơ</span><strong id="preview-name">UpLocket · @bạn</strong></div><div><span>Loại chữ ký</span><strong>Chứng chỉ tự ký</strong></div><div><span>Cấu hình DNS</span><strong>Theo hồ sơ mẫu hiện có</strong></div></div>
+              <label class="consent"><input id="profile-consent" type="checkbox" required><span>Tôi hiểu hồ sơ chứa cấu hình DNS và chứng chỉ CA của bên thứ ba. Tôi sẽ xem nội dung trước khi cài đặt.</span></label>
+              <button class="button button-dark create-button" id="create-button" type="submit"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4Z"/></svg><span>Tạo hồ sơ theo ID</span></button>
+              <p class="processing-note">Thông tin chỉ được dùng trong tab này và không được lưu lại.</p>
+            </form>
+            <div id="generation-status" class="generation-status" role="status" aria-live="polite" hidden></div>
+            <section id="result" class="result" aria-labelledby="result-title" hidden tabindex="-1">
+              <span class="success-icon" aria-hidden="true">✓</span><h3 id="result-title">Hồ sơ của bạn đã sẵn sàng</h3><p id="result-account"></p><dl><div><dt>Chứng chỉ ký</dt><dd id="result-signer"></dd></div><div><dt>Kích thước</dt><dd id="result-size"></dd></div></dl><a id="download-profile" class="button button-gold" download>Tải hồ sơ về máy<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/></svg></a><p class="field-hint">Trên iPhone, mở hồ sơ đã tải để bắt đầu cài đặt. <a href="#cai-dat">Xem hướng dẫn</a>.</p>
+            </section>
+            <noscript><p class="form-error">Bật JavaScript để tạo hồ sơ. Bạn vẫn có thể tải bản gốc bên cạnh.</p></noscript>
+          </div>
+          <aside class="builder-aside">
+            <div class="explanation-card"><span class="section-label">ĐIỀU GÌ ĐƯỢC CÁ NHÂN HÓA?</span><h3>Không chỉ đổi<br>tên file tải về.</h3><ul class="check-list"><li>Tên hồ sơ hiển thị theo ID Locket</li><li>Mã định danh gắn với ID bạn nhập</li><li>UUID mới cho từng phần cấu hình</li><li>Chứng chỉ ký mới mang tên ID của bạn</li><li>Đóng gói CMS/PKCS#7 cho iPhone</li></ul><div class="honest-note"><strong>Về tài khoản Gold</strong><p>Đổi ID và chứng chỉ ký không kích hoạt Gold. Web chưa kết nối API cấp quyền hoặc cấp DNS riêng theo tài khoản. DNS và chứng chỉ CA bên trong vẫn giữ nguyên theo hồ sơ mẫu.</p></div></div>
+            <a class="original-download" href="./UpLocket.mobileconfig"><span><strong>Cần bản cấu hình gốc?</strong><small>Tải UpLocket.mobileconfig · 7,5 KB</small></span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/></svg></a>
+          </aside>
         </div>
-      </section>
-      <section class="guide" id="huong-dan" aria-labelledby="guide-heading">
-        <div class="guide-title"><h2 id="guide-heading">Cài đặt trong 3 bước</h2><p>Thực hiện trực tiếp trên iPhone của bạn.</p></div>
-        <ol>
-          <li><h3>Tải cấu hình</h3><p>Nhấn “Tải cấu hình” trong Safari. Chọn “Cho phép” nếu iPhone hỏi về việc tải hồ sơ.</p></li>
-          <li><h3>Mở Cài đặt</h3><p>Vào ứng dụng Cài đặt, chọn “Hồ sơ đã tải về”.</p></li>
-          <li><h3>Xem và cài đặt</h3><p>Kiểm tra nội dung, nhấn “Cài đặt” và làm theo hướng dẫn trên màn hình.</p></li>
-        </ol>
-        <p class="support">Cần thêm hướng dẫn? <a href="https://support.apple.com/vi-vn/102400" target="_blank" rel="noopener noreferrer">Xem hướng dẫn của Apple ↗</a></p>
-      </section>
-    </main>
-    <footer><span>UpLocket Network</span><span>Cấu hình DNS-over-HTTPS</span></footer>
-  </div>
+      </div>
+    </section>
+    <section class="guide-section container" id="cai-dat" aria-labelledby="guide-title">
+      <div class="section-heading"><span class="section-label">TỪ TRÌNH DUYỆT ĐẾN IPHONE</span><h2 id="guide-title">Cài đặt, từng bước một.</h2><p>Nên tạo và tải hồ sơ trực tiếp bằng Safari trên iPhone của bạn.</p></div>
+      <div class="steps"><article><span class="step-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-3 5-5 3 3-5Z"/></svg></span><h3>Mở bằng Safari</h3><p>Nhập ID, xác nhận nội dung rồi nhấn tạo hồ sơ. Chờ đến khi file sẵn sàng.</p></article><article><span class="step-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/></svg></span><h3>Tải và mở hồ sơ</h3><p>Nhấn tải về, sau đó mở file .mobileconfig trong mục tải xuống. Cho phép tải hồ sơ nếu được hỏi.</p></article><article><span class="step-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v14H4ZM8 2v8m8-8v8M8 14h8"/></svg></span><h3>Kiểm tra trong Cài đặt</h3><p>Vào Cài đặt, chọn Hồ sơ đã tải về. Xem cấu hình và chứng chỉ trước khi chọn Cài đặt.</p></article></div>
+      <p class="guide-footnote">Chứng chỉ tự ký có thể hiển thị “Chưa xác minh”. <a href="https://support.apple.com/vi-vn/102400" target="_blank" rel="noopener noreferrer">Đọc hướng dẫn cài hồ sơ của Apple</a>.</p>
+    </section>
+    <section class="faq-section container" id="cau-hoi" aria-labelledby="faq-title"><div><span class="section-label">CÓ THỂ BẠN ĐANG THẮC MẮC</span><h2 id="faq-title">Rõ một chút,<br>an tâm hơn.</h2><p>Thông tin cần biết trước khi cài hồ sơ lên thiết bị.</p></div><div class="faq-list">
+      <details><summary>Nhập username có xác minh được tài khoản Locket không?</summary><p>Không. Username hoặc UID chỉ dùng để tạo tên, mã định danh và chứng chỉ ký cho hồ sơ. Web không đăng nhập Locket, không tra cứu tài khoản và không xác nhận quyền sở hữu ID.</p></details>
+      <details><summary>Chứng chỉ nào được thay đổi theo ID?</summary><p>Chứng chỉ ký bên ngoài hồ sơ được tạo mới theo ID của bạn. Chứng chỉ CA bên trong và địa chỉ DNS giữ nguyên theo bản mẫu vì chúng phải khớp với hệ thống DNS đang sử dụng.</p></details>
+      <details><summary>Hồ sơ này có tự mở khóa Locket Gold không?</summary><p>Không. Việc tạo chữ ký hoặc đổi tên hồ sơ không cấp quyền Gold. Muốn cấp cấu hình riêng cho từng tài khoản cần dịch vụ DNS và API cấp quyền hợp lệ; phiên bản web hiện tại chưa có kết nối này.</p></details>
+      <details><summary>ID và khóa ký được lưu ở đâu?</summary><p>ID và khóa riêng chỉ tồn tại trong bộ nhớ của tab khi tạo hồ sơ. Khóa được bỏ đi sau khi ký; website không gửi ID hoặc khóa lên máy chủ và không dùng localStorage để lưu chúng.</p></details>
+      <details><summary>Tại sao iPhone báo “Chưa xác minh”?</summary><p>Hồ sơ được ký bằng chứng chỉ tự tạo, không thuộc chuỗi chứng chỉ được Apple tin cậy. Chữ ký giúp kiểm tra tính toàn vẹn, nhưng không chứng minh nguồn phát hành đã được Apple xác minh.</p></details>
+      <details><summary>Cài hồ sơ DNS có thay đổi gì trên máy?</summary><p>Hồ sơ cấu hình DNS cho các miền trong bản mẫu và cài chứng chỉ CA của bên thứ ba. Hãy xem các mục này trong Cài đặt trước khi quyết định cài. Bạn có thể quản lý hồ sơ trong Cài đặt chung, mục VPN &amp; Quản lý thiết bị.</p></details>
+    </div></section>
+    <section class="bottom-cta container"><div><span class="section-label">SẴN SÀNG KHI BẠN MUỐN</span><h2>Một hồ sơ, mang tên bạn.</h2></div><a class="button button-dark" href="#tao-ho-so">Tạo hồ sơ miễn phí</a></section>
+  </main>
+  <footer class="container footer"><div><a class="footer-brand" href="./">uplocket<span>✦</span></a><p>Công cụ tạo hồ sơ cá nhân. Không liên kết với Locket Labs.</p></div><div><a href="#tao-ho-so">Tạo hồ sơ</a><a href="#cai-dat">Hướng dẫn</a><a href="#cau-hoi">Giải đáp</a></div><small>© 2026 UpLocket Network</small></footer>
 </body>
 </html>

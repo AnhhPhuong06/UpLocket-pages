@@ -1,0 +1,76 @@
+{
+  "PayloadDisplayName": "UpLocket",
+  "PayloadDescription": "C?u h?nh DNS-over-HTTPS (DoH) UpLocket",
+  "PayloadIdentifier": "com.locketgold.doh.usr_f8e35f2a59033f7ee48c65f8",
+  "PayloadOrganization": "UpLocket Network",
+  "PayloadType": "Configuration",
+  "PayloadUUID": "CAE316FA-3976-42E3-8310-CF4548A33D9C",
+  "PayloadVersion": 1,
+  "PayloadRemovalDisallowed": false,
+  "PayloadContent": [
+    {
+      "PayloadType": "com.apple.dnsSettings.managed",
+      "PayloadIdentifier": "com.locketgold.doh.settings.usr_f8e35f2a59033f7ee48c65f8",
+      "PayloadUUID": "74C85730-D84B-493A-B0D5-C4163448808B",
+      "PayloadVersion": 1,
+      "PayloadDisplayName": "Locket Gold DNS Configuration",
+      "PayloadDescription": "DNS-over-HTTPS (DoH) cấu hình cho tài khoản Locket Gold",
+      "DNSSettings": {
+        "DNSProtocol": "HTTPS",
+        "ServerURL": "https://dns.uplocket.io.vn/dns-query/e9a5dd0c0b619a02d4bab487694bdbc050944bb849a894923fa39092922f68c4",
+        "SupplementalMatchDomains": [
+          "api.revenuecat.com",
+          "revenuecat.com",
+          "analytics.revenuecat.com",
+          "rc-cdn.revenuecat.com",
+          "sdk.revenuecat.com",
+          "gateway.revenuecat.com",
+          "errors.revenuecat.com",
+          "identity.revenuecat.com",
+          "customer.revenuecat.com",
+          "subscriptions.revenuecat.com",
+          "firebaseremoteconfig.googleapis.com",
+          "firebaseremoteconfigrealtime.googleapis.com",
+          "us-central1-locket-4252a.cloudfunctions.net",
+          "spclient.wg.spotify.com",
+          "spclient.spotify.com",
+          "gae2-spclient.spotify.com",
+          "gew4-spclient.spotify.com",
+          "guc3-spclient.spotify.com",
+          "apresolve.spotify.com",
+          "youtubei.googleapis.com",
+          "googlevideo.com",
+          "firebaselogging.googleapis.com",
+          "firebaselogging-pa.googleapis.com",
+          "googleads.g.doubleclick.net",
+          "pagead2.googlesyndication.com",
+          "ad.doubleclick.net",
+          "pubads.g.doubleclick.net",
+          "securepubads.g.doubleclick.net",
+          "imasdk.googleapis.com",
+          "ads.youtube.com",
+          "ad.youtube.com",
+          "audio-ak-spotify-com.akamaized.net",
+          "gads.current.spotify.com",
+          "crashdump.spotify.com",
+          "adclick.g.doubleclick.net",
+          "adeventtracker.spotify.com",
+          "log.spotify.com",
+          "amplitude.com",
+          "spotify.com"
+        ]
+      }
+    },
+    {
+      "PayloadType": "com.apple.security.root",
+      "PayloadIdentifier": "com.locketgold.root.ca",
+      "PayloadUUID": "8F4C2B1A-6D3E-4A90-9C17-2B5E7A0D4F61",
+      "PayloadVersion": 1,
+      "PayloadDisplayName": "UpLocket Custom Root CA",
+      "PayloadDescription": "Sau khi cài hồ sơ, vào Cài đặt > Giới thiệu > Tin cậy chứng chỉ và bật chứng chỉ UpLocket Custom Root CA.",
+      "PayloadContent": {
+        "__data": "MIIF1zCCA7+gAwIBAgIUVVlObPj26RlnVCI/QF9DrfvPWG4wDQYJKoZIhvcNAQELBQAwezELMAkGA1UEBhMCVk4xDDAKBgNVBAgMA0hDTTEMMAoGA1UEBwwDSENNMR8wHQYDVQQKDBZMb2NrZXRHb2xkIFNlcnZlciAyMDI2MQswCQYDVQQLDAJDQTEiMCAGA1UEAwwZTG9ja2V0R29sZCBDdXN0b20gUm9vdCBDQTAeFw0yNjA5MjkxOTMyMTJaFw0zNjA5MjYxOTMyMTJaMHsxCzAJBgNVBAYTAlZOMQwwCgYDVQQIDANIQ00xDDAKBgNVBAcMA0hDTTEfMB0GA1UECgwWTG9ja2V0R29sZCBTZXJ2ZXIgMjAyNjELMAkGA1UECwwCQ0ExIjAgBgNVBAMMGUxvY2tldEdvbGQgQ3VzdG9tIFJvb3QgQ0EwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDF4hivMi0x1lY9U9nXpHvcbEisthJYcNvt0s7pY/50DBejpw3VkYI0qDXGE0cbgB3gd+rDrlEXJHs60qmSfDDvlDfhqKgFqLiJhZjdQ3NnkPBPZKy4UBgCpDqSBbFxmSqnl1vf45qx8ZpUbDcCdR+4BoFCji9cmCmpPWfYc6ddClqKNOkB/a3MV+Buh0EHcLfP3ksf2DvUHIPlMA4IVJKCBkUUG/T++NL+4HvG/hgfgtosBF7QMT/HR55f1vC9EJQcanXqwGaNYfeXR41/GzfzMA5Q8mcNu5ISsCW3Wyv4uDy7WPMTmeuUnpp7FkEJpC202iN9vxi/l8M7qahI/3zkDUPJF2Yt0JmouvHZbuErSzpTko7nxBeBBcdClwHbdUNSSelvBeYlZUCReuaOKLj5t2CIxAx5tIUifeGrnlsRanS9CkApFVDdVTjpPGlVgXHo3U407OXLlX72uYzrDy62seUTQkaovqQRUPjfldgHP93UVzB2H3bmMotDn6bOCRUsuyZtbZxjEKYK4N2wiv9RyqaSRcFOdHG0jPXf3dRxGR85BQTWwCsIp37OKPM8KUSJUUmZnGE3GyOMUhUmTBvbzTIiAlMPld1+0mzqNDsPwaboAfWtz5y7BwryzORiblfGgOkkPEvx2hl3w4g7G8DGl7I5JV/kp+roeJZd95RTSwIDAQABo1MwUTAdBgNVHQ4EFgQUBcVCPSafU6N5qlk3FX/Un0yooccwHwYDVR0jBBgwFoAUBcVCPSafU6N5qlk3FX/Un0yooccwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAgEAv5z8N+g6haH0tFNIeyxGyQoUDiJNsw1Hm4HlX54G600miS9C2cXrROiEtjOIZkvaIsgC5PeUytZ04a63Ra9uPdcqCz1B0eILEamLvwS65VLi08fGefXoAs4iNYc17CK3ib8Hjefb8h7ylW46vIBdmJbgmEidaWID7SQDgPfsao6EoUi2EM9kEg8l9qAbossN4ooeZM6pCwZAoMSk7WihS1thGftgW2H68RM/NnqKxQ7X+NbsW8I+CP6SHvWP1qCd8aO0Cx8KEJanS5XWzk06Jmx39u4c+J5pBqpR+53H2QHoKAHXATjpjoSsg2/Z/EHFULbjgsCPIWm2CGDuKCX9mwgpk2WS1woC7FG4ES1R3tvCCoaFgjeJ+t+fUfspZ3xB2X+tAOBqnWqreZg8gv3l0cgqALNyeo/lAhU3rcuEu5BY6j5XiNg8L5pJKYjrKgg1+7cQ8sr0dIkVmaMNC1ilHlG6UnnUzIF2psHK3eCWt6kSpAKSs/jUCin67urRT7zLB2IdE/8r7r1XhXRSDa2QDWk8x5JqnZ7JZCUg4E1HgHeSA0vinIIHNtlAmj8i6Yh4GBh7aCo8AwQ/P+6eSP1BlF9x5WECNz/spmHk0hAapA+zmP+PWf9Jcp//p2+VfoHuA2VmsokR0IAsqH/T3QHJFfUC8I42i2CZCyhCl0wl5S8="
+      }
+    }
+  ]
+}
